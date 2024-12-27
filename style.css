@@ -1,0 +1,164 @@
+/* Reset and global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffc107;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    align-items: center;
+    padding: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 95%;
+    max-width: 750px;
+    padding: 5px;
+}
+
+h1 {
+    color: #000;
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6vw;
+    text-align: center;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+select,
+#progress,
+#prayer {
+    width: 100%;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    appearance: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #000;
+    font-size: 2.5vw;
+    cursor: pointer;
+    text-align: center;
+}
+
+#prayer {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+    opacity: 1;
+    user-select: none;
+    font-size: 4.5vw;
+    text-align: center;
+    display: block; /* Key change: Default to block */
+    padding: 20px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: manual;
+    white-space: pre-line;
+    line-height: 1.6;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+#prayer::-webkit-scrollbar {
+    display: none;
+}
+
+#prayer {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+#prayer.long-content {
+    display: flex; /* Switch to flex for long content */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#prayer.highlight {
+    background-color: #000;
+    color: #ffc107;
+}
+
+#progress {
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;
+    background-color: #000;
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+#counter {
+    color: #000;
+    font-size: 2.5vw;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    #prayer {
+        font-size: 2.2vh;
+        min-height: 30vh;
+        max-height: 55vh;
+    }
+    h1 {
+        font-size: 3.5vh;
+    }
+    select {
+        font-size: 1.5vh;
+    }
+    #counter {
+        font-size: 1.5vh;
+    }
+}
+
+/* Media query for smaller screens (Portrait Mobile) */
+@media (max-width: 480px) and (orientation: portrait) {
+    #prayer {
+        font-size: 5.5vw;
+        min-height: 30vh;
+        max-height: 55vh;
+    }
+    h1 {
+        font-size: 9vw;
+    }
+    select {
+        font-size: 3vw;
+    }
+    #counter {
+        font-size: 3vw;
+    }
+}
